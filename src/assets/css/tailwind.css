@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+#height {
+  height: calc(100vh - 40vh);
+}
