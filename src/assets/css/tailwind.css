@@ -4,6 +4,9 @@
 body {
   font-family: "Nunito Sans", sans-serif;
 }
-#height {
-  height: calc(100vh - 40vh);
+
+@media only screen and (min-width: 768px) {
+  #height {
+    height: calc(100vh - 40vh);
+  }
 }

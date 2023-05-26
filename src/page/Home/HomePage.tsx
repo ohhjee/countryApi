@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
     e.preventDefault();
     HandleSearch();
   };
-  const HandleFilter = async (region) => {
+  const HandleFilter = async (region: unknown) => {
     try {
       const { data } = await axios(
         `https://restcountries.com/v3.1/region/${region}`
@@ -63,9 +63,9 @@ export const HomePage: React.FC = () => {
       name: "Antarctica",
     },
   ];
-  const HandleFormFiter = (e) => {
+  const HandleFormFiter = (e: unknown) => {
     e.preventDefault();
-    HandleFilter();
+    HandleFilter(e);
   };
 
   const fetchCountry = async () => {
@@ -89,12 +89,12 @@ export const HomePage: React.FC = () => {
                     type="text"
                     name="search"
                     onChange={(event) => setSearch(event.target.value)}
-                    className="w-full border shadow-[0_0_5px_2px] shadow-gray-300 pl-[1.5rem] focus-within:outline-none px-2 text-[.8rem] h-[5vh] "
+                    className="w-full dark:bg-slate-700  shadow-[0_0_5px_2px] shadow-slate-500 pl-[1.5rem] focus-within:outline-none px-2 text-[.8rem] h-[5vh] "
                     value={search}
                     placeholder="search for a country"
                   />
-                  <div className="absolute top-0 h-full flex items-center left-1">
-                    <MagnifyingGlassIcon className="h-4 w-4" />
+                  <div className="absolute top-0 flex items-center h-full left-1">
+                    <MagnifyingGlassIcon className="w-4 h-4" />
                   </div>
                 </div>
               </form>
@@ -105,7 +105,7 @@ export const HomePage: React.FC = () => {
                   name=""
                   id=""
                   onChange={(e) => HandleFilter(e.target.value)}
-                  className="w-full shadow-[0_0_5px_2px] shadow-gray-300 h-[5vh] bg-white px-2 focus-within:outline-none"
+                  className="w-full dark:bg-slate-700 shadow-[0_0_5px_2px] shadow-slate-500 h-[5vh] bg-white px-2 focus-within:outline-none"
                 >
                   {regions.map((region, index) => (
                     <option value="" key={index} value={region.name}>
@@ -132,7 +132,7 @@ export const HomePage: React.FC = () => {
                         <img
                           src={res.flags.png}
                           alt=""
-                          className="h-full w-full rounded-t"
+                          className="w-full h-full rounded-t"
                         />
                       </div>
                       <div className="p-3">
