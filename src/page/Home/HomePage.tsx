@@ -4,12 +4,21 @@ import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 
 import { Link } from "react-router-dom";
 interface CountryId {
-  id: number;
-  name: string;
+  altSpellings: string[];
+  area: number;
+  borders: string[];
+  capital: string[];
+  continents: string[];
+  currencies: object;
+  fifa: string;
+  flags: {
+    alt: string;
+    png: string;
+    svg: string;
+  };
+  language: object;
+  name: { common: string; official: string; nativeName: object };
   population: number;
-  continents: string;
-  capital: string;
-  common: string;
 }
 
 export const HomePage: React.FC = () => {
@@ -108,7 +117,7 @@ export const HomePage: React.FC = () => {
                   className="w-full dark:bg-slate-700 shadow-[0_0_5px_2px] shadow-slate-500 h-[5vh] bg-white px-2 focus-within:outline-none"
                 >
                   {regions.map((region, index) => (
-                    <option value="" key={index} value={region.name}>
+                    <option key={index} value={region.name} className="rounded">
                       {region.name}
                     </option>
                   ))}
@@ -126,7 +135,7 @@ export const HomePage: React.FC = () => {
                   key={index}
                   className="  flex-[1_1_50%]  xs:flex-[1_1_30%] lg:flex-[1_1_20%] shadow-gray-400 shadow-[0_0_5px_2px] gap-[2rem] rounded"
                 >
-                  <Link to={res.name.common}>
+                  <Link to={`country/${res.name.common}`}>
                     <div>
                       <div className="h-[20vh] ">
                         <img
