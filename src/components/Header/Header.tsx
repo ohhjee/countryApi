@@ -52,7 +52,7 @@ export const Header = () => {
 
   return (
     <div className="py-[1rem] shadow-[0px_0px_10px_5px] shadow-gray-300 dark:shadow-gray-700">
-      <div className="container mx-auto w-full">
+      <div className="container mx-auto w-full sm:px-2 lg:px-0">
         <div className="flex justify-between items-center px-[1rem] md:px-0">
           <div className="font-bold">Where in the world?</div>
 

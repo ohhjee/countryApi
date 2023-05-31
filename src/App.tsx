@@ -14,7 +14,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route element={<HomePage />} index />
-      <Route element={<CountryDetails />} loader={countryLoader} path=":name" />
+      <Route
+        element={<CountryDetails />}
+        loader={countryLoader}
+        path="/country/:name"
+      />
     </Route>
   )
 );
