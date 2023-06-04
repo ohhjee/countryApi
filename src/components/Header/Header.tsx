@@ -1,5 +1,5 @@
 import { MoonIcon } from "@heroicons/react/24/outline";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   // TODO:: ADD THEME TO PAGE SIG LOCALSTORAGE

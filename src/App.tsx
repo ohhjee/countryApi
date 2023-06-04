@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { Header } from "./components";
 import {
   Route,
@@ -8,17 +6,12 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import { CountryDetails, HomePage } from "./page";
-import { countryLoader } from "./helper";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route element={<HomePage />} index />
-      <Route
-        element={<CountryDetails />}
-        loader={countryLoader}
-        path="/country/:name"
-      />
+      <Route element={<CountryDetails />} path="/country/:name" />
     </Route>
   )
 );
