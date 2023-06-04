@@ -35,7 +35,7 @@ export const HomePage: React.FC = () => {
       return "reer";
     }
   };
-  const HandleSearchForm = (e) => {
+  const HandleSearchForm = (e: unknown | any) => {
     e.preventDefault();
     HandleSearch();
   };
@@ -72,7 +72,7 @@ export const HomePage: React.FC = () => {
       name: "Antarctica",
     },
   ];
-  const HandleFormFiter = (e: unknown) => {
+  const HandleFormFiter = (e: unknown | any) => {
     e.preventDefault();
     HandleFilter(e);
   };

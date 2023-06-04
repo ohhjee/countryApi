@@ -1,7 +1,7 @@
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 interface ISetCountry {
   altSpellings: string[];
@@ -19,6 +19,7 @@ interface ISetCountry {
   languages: object;
   name: { common: string; official: string; nativeName: object };
   population: number;
+  subregion: string;
 }
 export const CountryDetails = () => {
   // const countryData = useLoaderData() as unknown as Array<ISetCountry>;
@@ -38,7 +39,6 @@ export const CountryDetails = () => {
 
   const [country, setCountry] = useState<Array<ISetCountry>>();
 
-  const [nativeName, setnativeName] = useState();
   // const countryCurrency = country;
   // const currency = country;
   // Object.entries(currency).map((item, key) => {
@@ -110,9 +110,8 @@ export const CountryDetails = () => {
                             (resp, idx) => (
                               <span key={idx}>
                                 <span>
-                                  {resp
-                                    ? resp[1].common
-                                    : resp[1].common.join("")}
+                                  {resp[1].common}
+
                                   {/* {resp[1].common && resp[1].common.join("")} */}
                                 </span>
                               </span>
